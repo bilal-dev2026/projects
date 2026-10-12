@@ -1,0 +1,47 @@
+create proc insert_parent
+@id int , @name nchar(20), @email nchar(30), @password nchar(20),@phone nchar(11), @age int
+As
+insert into Parent (parentid,parentname,parentemail,parentpassword,parentphone,parentage)
+values (@id,@name,@email,@password,@phone,@age);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc insert_child
+ @name nchar(20), @age int, @ch_parentid int,@ch_roomid int, @nurserybus nchar(10),@paymentmethod nchar(20),@paymentperiod nchar(20),@addedExtratime nchar(10),@parentfeedback nchar(512)
+As
+insert into child (childname,childage,ch_parentid,ch_roomid,nurserybus,paymentmethod,paymentperiod,addedExtratime,parentfeedback)
+values (@name,@age,@ch_parentid,@ch_roomid,@nurserybus,@paymentmethod,@paymentperiod,@addedExtratime,@parentfeedback);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc insert_staffmember
+@name nchar(20), @email nchar(50), @password nchar(20), @phone nchar(11),@age int
+As
+insert into stuffs(stuffName,stuffemail,stuffPassword,stuffphone,stuffage)
+values (@name,@email,@password,@phone,@age);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc delete_staff
+@id int
+As
+delete from stuffs where @id = stuffid ;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc delete_Parent
+@id int
+As
+delete from parent where @id = parentid ;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc delete_child
+@id int
+As
+delete from child where @id = childid ;
+
+
+
+
+
+
+
+
+
+
